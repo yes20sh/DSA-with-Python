@@ -109,14 +109,27 @@ class LinkedList:
         index  = 0
         if self.head == None:
             print("List is Empty")
-            return
+            return 
         while curr is not None:
             if curr.data == value:
                 index += 1
                 return index
             index += 1
-            curr = curr.next
-        print("Not found")
+            curr = curr.next   
+        return "Not found"
+    
+    def index (self, index):
+        curr = self.head
+        count = 1
+        if self.head == None:
+            print("List is Empty")
+            return 
+        while curr is not None:
+            if count == index:
+                return curr.data
+            count += 1
+            curr = curr.next   
+        return "Not found"
 
 
 ll = LinkedList()
@@ -133,7 +146,9 @@ ll.append(85)
 ll.append(95)
 ll.remove(45)
 
-print(f"searching 65 : {ll.search(65)}")
+print(f"searching 65 : {ll.search(20)}")
+print(f"index 2 : {ll.index(2)}")
+
 
 
 print(ll)
