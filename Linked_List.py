@@ -90,7 +90,7 @@ class LinkedList:
             print("Empty Linked List")
             return
         if self.head.data == value:
-            delete_head()
+            self.delete_head()
             self.n -= 1
             return
 
@@ -118,6 +118,7 @@ class LinkedList:
             curr = curr.next   
         return "Not found"
     
+    # Search by index
     def index (self, index):
         curr = self.head
         count = 1
@@ -131,9 +132,58 @@ class LinkedList:
             curr = curr.next   
         return "Not found"
 
+    # Questions ---------------------------------------------------------------------------
+
+    # Q - Finding the max element in Linked List
+    def max(self):
+        curr = self.head
+        temp = curr.data
+        while curr is not None:
+            if temp < curr.data:
+                temp = curr.data
+            curr = curr.next
+        return temp
+    
+    def replace_max(self, value):
+        if self.head is None:
+            return "Empty"
+        curr = self.head
+        max = curr
+        while curr is not None:
+            if max.data < curr.data:
+                max = curr
+            curr = curr.next
+        max.data = value
+        return 'Replaced'
+
+    #Q - Sum of all odd position in Linked List
+
+    def sum_odd(self):
+        if self.head == None:
+            return 'Emply'
+        result = 0
+        count = 1
+        curr = self.head
+        while curr != None:
+            if count % 2 != 0:
+                result = curr.data + result
+            count += 1
+            curr = curr.next
+        return result
+    
+    # Q - Reserve the linked list
+    def reverse(self):
+        curr = self.head
+        prev_node = None
+        while curr != None:
+            newNode = curr.next
+            curr.next = prev_node
+            prev_node = curr
+            curr = newNode  
+        self.head = prev_node
+
 
 ll = LinkedList()
-
 ll.insert_head(12)
 ll.insert_head(23)
 ll.append(25)
@@ -145,12 +195,18 @@ ll.append(65)
 ll.append(85)
 ll.append(95)
 ll.remove(45)
+ll.insert_middle(225,25)
 
 print(f"searching 65 : {ll.search(20)}")
 print(f"index 2 : {ll.index(2)}")
 
-
+print(f"Maximum number in Linked list : {ll.max()}")
+print(ll)
+print(f"Maximum number in Linked list and replace it : {ll.replace_max(500)}")
+print(f"Length of linked list : {len(ll)}")
+print(f"Sum of all odd position : {ll.sum_odd()}")
+print(ll.reverse())
 
 print(ll)
-print(f"Length of linked list : {len(ll)}")
+
 ll.clear()
