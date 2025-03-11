@@ -6,7 +6,7 @@ class Node:
 class StackLinkedList:
     def __init__(self):
         self.top = None
-        self.size = 0
+        self.size = 1
     
     def epty(self):
         if self.top == None:
@@ -22,6 +22,7 @@ class StackLinkedList:
     
     def clear(self):
         self.top = None
+        self.size = 0
     
     def sizeof(self):
         return self.size
@@ -46,9 +47,9 @@ class StackLinkedList:
             return "No Element"
         curr = self.top
         self.top = self.top.next
+        self.size -= 1
         return curr.data
-
-
+    
     def __str__(self):
         if self.epty():
             return "No Element"
@@ -104,35 +105,37 @@ class StackLinkedList:
             elif option == '3':
                 break
             else : 
-                print("Wrong Option")
-0        
+                print("Wrong Option")        
 
-stk = StackLinkedList()
+def main():
+    stk = StackLinkedList()
 
-stk.push(3)
-stk.push(8)
-stk.push(5)
-stk.push(9)
-print(f"Stack is empty or not :  {stk.empty()} ")
-print(f"The peak element in array : {stk.peak()}")
-print(stk)
-stk.pop()
-print(f"Size of stack : {stk.sizeof()}")
-print(stk)
-stk.clear()
+    stk.push(3)
+    stk.push(8)
+    stk.push(5)
+    stk.push(9)
+    print(f"Stack is empty or not :  {stk.empty()} ")
+    print(f"The peak element in array : {stk.peak()}")
+    print(stk)
+    stk.pop()
+    print(f"Size of stack : {stk.sizeof()}")
+    print(stk)
+    stk.clear()
 
-# q1
-stk.push("O")
-stk.push("L")
-stk.push("L")
-stk.push("E")
-stk.push("H")
-print(stk)
-print(f" Reverse the stack string : {stk.reverse()}")
+    # q1
+    stk.push("O")
+    stk.push("L")
+    stk.push("L")
+    stk.push("E")
+    stk.push("H")
+    print(stk)
+    print(f" Reverse the stack string : {stk.reverse()}")
 
-# Q2
-stk.text_editor()
-print(stk)
+    # Q2
+    stk.text_editor()
+    print(stk)
 
+if __name__ == "__main__":
+    main()
 
-    
+        
