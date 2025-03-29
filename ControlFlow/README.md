@@ -25,6 +25,10 @@
 13. Write a program to input a number from user and find Prime factors of the given number using loop.
 14. Write a program to input two numbers from user and find LCM (Lowest Common Multiple).
 15. Write a program to input two numbers from the user and find HCF (Highest Common Factor) / GCD (Greatest Common Divisor)
+16. Write a program to input a number from the user and check whether the given number is an Armstrong number or not.
+17. Write a program to print all Armstrong numbers between 1 to n where n is the input given by the user.
+18. Write a program to input a number and check whether the number is a Perfect number or not.
+19. Write a program to find all Perfect numbers between 1 to n where n is the input given by the user. 
 
 
 
