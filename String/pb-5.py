@@ -1,0 +1,1 @@
+# Remove leading, trailing, and extra spaces in a string.
